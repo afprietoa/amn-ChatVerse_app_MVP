@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "802222593732",
+    "project_id": "chat-app-e9070",
+    "storage_bucket": "chat-app-e9070.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802222593732:android:a649256f3319b0dde15b91",
+        "android_client_info": {
+          "package_name": "aplicacionesmoviles.avanzado.todosalau.ejemplochat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANjUhgo4sLaPLE38Ycnl1XkSNWXroQujI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
