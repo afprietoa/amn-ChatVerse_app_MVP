@@ -1,6 +1,5 @@
 package aplicacionesmoviles.avanzado.todosalau.ejemplochat;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,21 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.auth.User;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import aplicacionesmoviles.avanzado.todosalau.ejemplochat.Presenter.RegistroPresenter;
 import aplicacionesmoviles.avanzado.todosalau.ejemplochat.model.RegistroModel;
@@ -47,7 +31,7 @@ public class Registro extends AppCompatActivity implements RegistroContract.View
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registro);
+        setContentView(R.layout.activity_registro2);
 
         // Inicialización de componentes de la interfaz de usuario
         editTextName = findViewById(R.id.usernameEditText);

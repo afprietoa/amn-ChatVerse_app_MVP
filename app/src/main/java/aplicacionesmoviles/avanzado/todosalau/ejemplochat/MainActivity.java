@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
 
         // Cargar la animación desde un archivo XML
         Animation animacion = AnimationUtils.loadAnimation(this, R.anim.animacion_personalizada);

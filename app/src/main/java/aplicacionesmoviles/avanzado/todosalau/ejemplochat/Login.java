@@ -31,7 +31,7 @@ public class Login extends AppCompatActivity implements LoginContract.View {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
-                setContentView(R.layout.activity_login);
+                setContentView(R.layout.activity_login2);
 
                 // Inicialización de componentes de la interfaz de usuario
                 editTextEmail = findViewById(R.id.emailEditTextLogin);

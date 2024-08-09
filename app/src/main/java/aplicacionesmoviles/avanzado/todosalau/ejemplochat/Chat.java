@@ -5,7 +5,6 @@ import androidx.cardview.widget.CardView;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -61,7 +60,7 @@ public class Chat extends AppCompatActivity implements UserListContract, ChatCon
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat);
+        setContentView(R.layout.activity_chat2);
 
         // Inicialización de Firebase
         mAuth = FirebaseAuth.getInstance();

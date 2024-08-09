@@ -38,7 +38,7 @@ public class UserAdapter extends ArrayAdapter<UserModel> {
 
         // Verificar si la vista existente se puede reutilizar, de lo contrario, inflar la nueva vista
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.item_user, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_user2, parent, false);
         }
 
         // Referencias a las vistas del layout

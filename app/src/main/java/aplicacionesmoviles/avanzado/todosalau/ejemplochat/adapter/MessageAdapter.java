@@ -37,7 +37,7 @@ public class MessageAdapter extends ArrayAdapter<MessageModel> {
         View listItem = convertView;
         if (listItem == null) {
             // Si no hay una vista reutilizable, inflarla desde el layout XML
-            listItem = LayoutInflater.from(mContext).inflate(R.layout.item_message, parent, false);
+            listItem = LayoutInflater.from(mContext).inflate(R.layout.item_message2, parent, false);
         }
 
         // Obtener el mensaje actual en la posición especificada

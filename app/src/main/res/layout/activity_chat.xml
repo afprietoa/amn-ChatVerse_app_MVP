@@ -1,166 +1,113 @@
-<androidx.constraintlayout.widget.ConstraintLayout
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Chat">
+    tools:context=".Chat.ChatActivity">
 
-    <!-- ImageView de encabezado -->
-    <ImageView
-        android:id="@+id/headerImage"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:src="@drawable/headerandfooter"
-        android:scaleType="fitCenter"
-        android:layout_marginTop="-75dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="@string/chat_header_image_desc" />
-
-    <!-- TextView para el título -->
-    <TextView
-        android:id="@+id/titleText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/chat_title_text"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/headerImage"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5" />
-
-    <!-- CardView para el campo de entrada de correo electrónico y el botón de búsqueda -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/listviewBuscarUsuario"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"
-        app:layout_constraintTop_toBottomOf="@id/titleText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/searchEmailEditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:hint="@string/chat_email_hint"
-                android:inputType="textEmailAddress"
-                android:layout_weight="1" />
-
-            <Button
-                android:id="@+id/searchUserButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/chat_search_button" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <!-- CardView para mostrar los usuarios encontrados -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/listviewUsuarios"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"
-        app:layout_constraintTop_toBottomOf="@id/listviewBuscarUsuario"
-        app:layout_constraintBottom_toTopOf="@id/conversationsListView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <ListView
-            android:id="@+id/usersListView"
-            android:layout_width="match_parent"
-            android:layout_height="100dp" />
-    </androidx.cardview.widget.CardView>
-
-    <!-- CardView para mostrar las conversaciones -->
-    <TextView
-        android:id="@+id/textViewMiddleTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/chat_middle_title"
-        android:textStyle="bold"
-        android:textSize="24dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/listViewChatUsuarios"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listviewUsuarios" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/listViewChatUsuarios"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"
-        android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@id/textViewMiddleTitle"
-        app:layout_constraintBottom_toTopOf="@id/messageInputLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <ListView
-            android:id="@+id/conversationsListView"
-            android:layout_width="match_parent"
-            android:layout_height="195dp" />
-    </androidx.cardview.widget.CardView>
-
-    <!-- Layout para el campo de entrada de mensaje y el botón de enviar -->
-    <LinearLayout
-        android:id="@+id/messageInputLayout"
+    <RelativeLayout
+        android:id="@+id/toolbarRL"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="-38dp"
-        android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@+id/listViewChatUsuarios"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:layout_height="55dp">
 
-        <!-- Campo de entrada de mensaje -->
-        <EditText
-            android:id="@+id/messageEditText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:hint="@string/chat_message_hint"
-            android:inputType="textMultiLine" />
+        <ImageButton
+            android:id="@+id/IbRegresar"
+            android:padding="10dp"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_regresar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-        <!-- Botón para enviar mensaje -->
-        <Button
-            android:id="@+id/sendButton"
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/toolbarIv"
+            android:layout_centerVertical="true"
+            android:src="@drawable/perfil_usuario"
+            android:layout_toStartOf="@+id/txt_nombres_usuario"
+            android:layout_marginEnd="7dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+
+        <TextView
+            android:id="@+id/txt_nombres_usuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/chat_send_button" />
-    </LinearLayout>
+            android:layout_centerInParent="true"
+            android:text="@string/txt_nombres_usuario"
+            android:textStyle="bold" />
 
-    <!-- ImageView de pie de página -->
-    <ImageView
-        android:id="@+id/footerImage"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:src="@drawable/headerandfooter"
-        android:scaleType="fitCenter"
-        android:layout_marginBottom="-80dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <TextView
+            android:id="@+id/txt_estado_chat"
+            android:text="@string/txt_estado_chat"
+            android:textSize="12sp"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/txt_nombres_usuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:background="#ccc"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatsRV"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_below="@+id/toolbarRL"
+        android:padding="5dp"
+        tools:listitem="@layout/item_chat_right"
+        android:layout_above="@+id/View2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <RelativeLayout
+        android:id="@+id/RL_mensaje"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/Et_mensaje_chat"
+            android:hint="@string/Et_mensaje_chat"
+            android:padding="10dp"
+            android:layout_toStartOf="@id/adjuntarFAB"
+            android:inputType="textMultiLine|textCapSentences"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/adjuntarFAB"
+            android:layout_centerVertical="true"
+            app:fabSize="mini"
+            android:elevation="0dp"
+            android:layout_toStartOf="@+id/enviarFAB"
+            android:layout_marginEnd="7dp"
+            android:src="@drawable/ico_imagen_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/enviarFAB"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            app:fabSize="mini"
+            android:elevation="0dp"
+            android:src="@drawable/ico_enviar_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/View2"
+        android:background="#ccc"
+        android:layout_above="@+id/RL_mensaje"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+</RelativeLayout>
