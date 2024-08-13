@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Icono para Perfil -->
+
+    <item
+        android:id="@+id/Btn_perfil"
+        android:icon="@drawable/perfil"
+        android:title="@string/Perfil">
+
+    </item>
+
+    <item
+        android:id="@+id/Btn_contactos"
+        android:icon="@drawable/contactos"
+        android:title="@string/contactos">
+
+    </item>
+
+
+    <item
+        android:id="@+id/Btn_chat"
+        android:icon="@drawable/chats"
+        android:title="@string/chats">
+
+    </item>
+
+
+
+
+</menu>

@@ -1,9 +1,11 @@
 package aplicacionesmoviles.avanzado.todosalau.ejemplochat;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -13,11 +15,14 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import aplicacionesmoviles.avanzado.todosalau.ejemplochat.Presenter.ChatPresenter;
 import aplicacionesmoviles.avanzado.todosalau.ejemplochat.Presenter.ChatPresenterImpl;
@@ -35,15 +40,10 @@ import aplicacionesmoviles.avanzado.todosalau.ejemplochat.view.UserListContract;
 public class Chat extends AppCompatActivity implements UserListContract, ChatContract {
 
     // Variables de la interfaz de usuario
-    private ListView conversationsListView;
-    private EditText messageEditText;
-    private Button sendButton;
     private ListView listView;
     private EditText searchEmailEditText;
     private Button searchUserButton;
-    private TextView textViewMiddleTitle;
-    private CardView listViewChatUsuarios;
-    private LinearLayout messageInputLayout;
+    private BottomNavigationView navigation_menu;
 
     // Variables de Firebase
     private FirebaseAuth mAuth;
@@ -75,14 +75,7 @@ public class Chat extends AppCompatActivity implements UserListContract, ChatCon
         listView = findViewById(R.id.usersListView);
         searchEmailEditText = findViewById(R.id.searchEmailEditText);
         searchUserButton = findViewById(R.id.searchUserButton);
-
-        // Configuración de la interfaz de chat
-        textViewMiddleTitle = findViewById(R.id.textViewMiddleTitle);
-        listViewChatUsuarios = findViewById(R.id.listViewChatUsuarios);
-        messageInputLayout = findViewById(R.id.messageInputLayout);
-        conversationsListView = findViewById(R.id.conversationsListView);
-        messageEditText = findViewById(R.id.messageEditText);
-        sendButton = findViewById(R.id.sendButton);
+        navigation_menu=findViewById(R.id.Navigation_menu);
 
         // Inicialización de presentadores
         presenter = new UserListPresenterImpl(this);
@@ -99,22 +92,16 @@ public class Chat extends AppCompatActivity implements UserListContract, ChatCon
             }
         });
 
-        // Configuración del OnClickListener para el botón de enviar mensaje
-        sendButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendMessage();
-            }
-        });
     }
+
 
     /**
      * Método para mostrar la interfaz de chat.
      */
     public void showChatInterface(){
-        textViewMiddleTitle.setVisibility(View.VISIBLE);
-        listViewChatUsuarios.setVisibility(View.VISIBLE);
-        messageInputLayout.setVisibility(View.VISIBLE);
+        //textViewMiddleTitle.setVisibility(View.VISIBLE);
+        //listViewChatUsuarios.setVisibility(View.VISIBLE);
+        //messageInputLayout.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -212,4 +199,7 @@ public class Chat extends AppCompatActivity implements UserListContract, ChatCon
         // Mostrar un mensaje o realizar alguna acción al enviar el mensaje
         Toast.makeText(this, "Mensaje enviado correctamente", Toast.LENGTH_SHORT).show();
     }
+
+
+
 }

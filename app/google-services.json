@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "802222593732",
-    "project_id": "chat-app-e9070",
-    "storage_bucket": "chat-app-e9070.appspot.com"
+    "project_number": "260649149929",
+    "project_id": "chatverse-f7f2e",
+    "storage_bucket": "chatverse-f7f2e.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:802222593732:android:a649256f3319b0dde15b91",
+        "mobilesdk_app_id": "1:260649149929:android:d863ae72a841a17da71778",
         "android_client_info": {
           "package_name": "aplicacionesmoviles.avanzado.todosalau.ejemplochat"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyANjUhgo4sLaPLE38Ycnl1XkSNWXroQujI"
+          "current_key": "AIzaSyCdcRvZ13VJjd5QKBqerDm4X-0uZ4dfJRk"
         }
       ],
       "services": {

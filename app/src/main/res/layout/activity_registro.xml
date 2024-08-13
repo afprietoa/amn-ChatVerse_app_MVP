@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".Registro">
 
-    <!-- ImageView del encabezado -->
     <ImageView
         android:id="@+id/headerImage"
         android:layout_width="0dp"
@@ -18,7 +17,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:contentDescription="@string/register_header_image_desc" />
 
-    <!-- TextView del título -->
     <TextView
         android:id="@+id/titleText"
         android:layout_width="wrap_content"
@@ -27,12 +25,11 @@
         android:textSize="44sp"
         android:textColor="@android:color/black"
         android:fontFamily="sans-serif-medium"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="130dp"
         app:layout_constraintTop_toBottomOf="@id/headerImage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- CardView para los campos de entrada -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="0dp"
@@ -49,7 +46,6 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Campo de entrada de nombre de usuario -->
             <EditText
                 android:id="@+id/usernameEditText"
                 android:layout_width="match_parent"
@@ -58,7 +54,6 @@
                 android:inputType="textPersonName"
                 android:layout_marginBottom="8dp" />
 
-            <!-- Campo de entrada de correo electrónico -->
             <EditText
                 android:id="@+id/emailEditText"
                 android:layout_width="match_parent"
@@ -75,29 +70,42 @@
                 android:inputType="textPassword"
                 android:layout_marginTop="8dp" />
 
-            <!-- Botón de registro -->
             <Button
                 android:id="@+id/registerButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/register_button_text"
-                android:layout_marginTop="16dp" />
+                android:layout_marginTop="16dp"
+                />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Texto de inicio de sesión -->
+
     <TextView
         android:id="@+id/loginText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="@string/register_login_text"
         android:textColor="@android:color/holo_blue_dark"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/Btn_Iniciar_Google" />
 
-    <!-- ImageView del pie de página -->
+    <Button
+        android:id="@+id/Btn_Iniciar_Google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Inicia con Google"
+        android:backgroundTint="@color/background_login"
+        android:textColor="@color/black"
+        android:drawableStart="@drawable/google_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
     <ImageView
         android:id="@+id/footerImage"
         android:layout_width="0dp"

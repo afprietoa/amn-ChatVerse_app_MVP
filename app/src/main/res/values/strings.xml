@@ -44,4 +44,11 @@
     <string name="email_user">Correo del usuario</string>
     <string name="chat_button">Chatear</string>
 
+    <!-- Titulo barra de navegacion.xml -->
+
+    <string name="Perfil">Perfil</string>
+    <string name="contactos">Contactos</string>
+    <string name="chats">Chats</string>
+
+
 </resources>
