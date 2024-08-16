@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="RoundedCornersBottom">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeBottomLeft">30dp</item>
+        <item name="cornerSizeBottomRight">30dp</item>
+    </style>
+
+    <style name="CustomEditTextStyle">
+        <item name="android:textColorHint">@color/colorHint</item> <!-- Color del hint -->
+    </style>
+
+    <style name="HintTextAppearance">
+        <item name="android:fontFamily">@font/manrope_bold</item> <!-- Cambia la fuente del hint -->
+    </style>
+
+    <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeWidth">0dp</item> <!-- Elimina el borde -->
+        <item name="boxBackgroundColor">@color/text_input_background</item> <!-- Color de fondo -->
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxCornerRadiusBottomEnd">20dp</item>
+        <item name="boxCornerRadiusBottomStart">20dp</item>
+        <item name="boxCornerRadiusTopEnd">20dp</item>
+        <item name="boxCornerRadiusTopStart">20dp</item>
+        <item name="endIconTint">@color/iconeye_password</item>
+    </style>
+
+    <style name="RoundedCornersBottom2">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomLeft">30dp</item>
+        <item name="cornerSizeBottomRight">30dp</item>
+
+    </style>
+
+    <style name="CustomFAB" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="cornerRadius">30dp</item>
+        <item name="backgroundTint">#ffffff</item>
+        <item name="elevation">3dp</item>
+
+    </style>
+
+    <style name="CustomCardShapeAppearanceRight">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">20dp</item>
+        <item name="cornerSizeTopRight">20dp</item>
+        <item name="cornerSizeBottomLeft">70dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+    <style name="CustomCardShapeAppearanceLeft">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">20dp</item>
+        <item name="cornerSizeTopRight">20dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">70dp</item>
+    </style>
+
+    <style name="CustomFAB2" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="cornerRadius">30dp</item>
+        <item name="backgroundTint">#197FE5</item> <!-- O el color que prefieras -->
+    </style>
+
+</resources>

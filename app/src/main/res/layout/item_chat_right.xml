@@ -1,47 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginStart="100dp"
-    app:cardUseCompatPadding="true"
-    android:padding="15dp"
-    app:cardCornerRadius="10dp">
+    android:layout_width="229dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/gradient_background_chatright"
+    android:layout_marginStart="140dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:orientation="vertical">
+        android:layout_height="313dp"
+        android:backgroundTint="@android:color/transparent"
+        app:shapeAppearanceOverlay="@style/CustomCardShapeAppearanceRight"
+        app:strokeColor="@android:color/transparent"
+        app:strokeWidth="0dp"
+        app:cardElevation="0dp">
 
-        <TextView
-            android:id="@+id/Tv_mensaje"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            tools:text="@tools:sample/lorem[15]"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/Iv_mensaje"
-            android:src="@drawable/imagen_enviada"
-            android:background="#ccc"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
-            android:layout_width="200dp"
-            android:layout_height="200dp"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/Tv_tiempo_mensaje"
-            android:text="@string/Tv_tiempo_mensaje"
-            android:textStyle="italic"
-            android:layout_marginTop="5dp"
-            android:layout_gravity="end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            <!-- TextView for the chat message -->
+            <TextView
+                android:id="@+id/textViewChatMessage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/manrope_medium"
+                android:textSize="14sp"
+                android:textColor="#ffffff"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                tools:text="Chatting is made simple, and the connection is made easy." />
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
 
-</com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/shapeableImageViewChatImage"
+                android:layout_width="201dp"
+                android:layout_height="163dp"
+                android:layout_marginTop="4dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/imagen_enviada"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewChatMessage" />
+
+
+            <TextView
+                android:id="@+id/textViewAdditionalInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="13dp"
+                android:text="@string/Tv_tiempo_mensaje"
+                android:textAlignment="textEnd"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shapeableImageViewChatImage"
+                app:layout_constraintVertical_bias="0.529" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</FrameLayout>

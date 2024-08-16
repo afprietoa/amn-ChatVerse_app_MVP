@@ -1,37 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FCF7F4"
     tools:context=".Fragmentos.FragmentChats">
 
-    <com.google.android.material.card.MaterialCardView
+    <!-- Imagen de encabezado -->
+
+    <!-- MaterialCardView para buscar -->
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imagen_encabezado"
+        android:layout_width="413dp"
+        android:layout_height="178dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/head_degrade"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/RoundedCornersBottom2" />
+
+    <TextView
+        android:id="@+id/textview_encabezado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/manrope_extrabold"
+        android:padding="16dp"
+        android:text="Chats"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imagen_encabezado" />
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/buscarMCV"
-        app:cardCornerRadius="5dp"
-        app:cardUseCompatPadding="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:boxBackgroundMode="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_encabezado">
 
         <EditText
-            android:id="@+id/etBuscar"
-            android:hint="@string/etBuscar"
-            android:padding="10dp"
+            android:id="@+id/et_buscar_usuario_chats"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_input_background"
+            android:drawableStart="@drawable/search_icon"
+            android:drawablePadding="6dp"
+            android:fontFamily="@font/manrope"
+            android:hint="@string/et_buscar_usuario"
+            android:inputType="textCapWords"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/colorGrisinputtexthint" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
-    </com.google.android.material.card.MaterialCardView>
-
+    <!-- RecyclerView para mostrar los chats -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chatsRv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        tools:listitem="@layout/items_chats"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagen_encabezado"
+        tools:listitem="@layout/items_chats" />
 
-
-</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>

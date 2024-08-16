@@ -26,12 +26,48 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity
+            android:name=".ActivityForgetPassword"
+            android:exported="false" />
+
+        <activity
+            android:name=".ActivityChangePassword"
+            android:exported="false" />
+
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ActivityEditarInformacion"
+            android:exported="false" />
+
+        <activity
+            android:name=".LoginEmailActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".OpcionesLoginActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".RegistroEmailActivity"
+            android:exported="false" />
+
+
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

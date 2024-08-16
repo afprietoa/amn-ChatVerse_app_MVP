@@ -9,9 +9,9 @@ android {
 
     defaultConfig {
         applicationId = "aplicacionesmoviles.avanzado.todosalau.ejemplochat"
-        minSdk = 30
+        minSdk = 34
         //noinspection EditedTargetSdkVersion
-        targetSdk = 30
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -52,9 +52,15 @@ dependencies {
     implementation("com.google.firebase:firebase-database:20.3.1")
 
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+    // Add PhotoView dependency
+    implementation ("com.github.chrisbanes:PhotoView:2.3.0")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation(kotlin("script-runtime"))
+    implementation ("com.airbnb.android:lottie:6.0.0")
+
+
+
 }

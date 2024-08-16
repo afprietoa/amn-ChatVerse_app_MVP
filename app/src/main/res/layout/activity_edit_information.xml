@@ -1,109 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".EditarInformacion">
+    android:background="#FCF7F4"
+    tools:context=".ActivityEditarInformacion">
 
-    <RelativeLayout
-        android:id="@+id/toolbarRL"
-        android:layout_width="match_parent"
-        android:layout_height="55dp">
 
-        <ImageButton
-            android:id="@+id/IbRegresar"
-            android:src="@drawable/ic_regresar"
-            android:background="@android:color/transparent"
-            android:padding="10dp"
-            android:layout_centerVertical="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+    <ImageView
+        android:id="@+id/iv_perfil_edit"
+        android:layout_width="0dp"
+        android:layout_height="399dp"
+        android:layout_marginTop="76dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:src="@drawable/perfil_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/Txt_titulo_edit"
-            android:text="@string/Txt_titulo_edit"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
-        <View
-            android:background="#cccccc"
-            android:layout_alignParentBottom="true"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"/>
+    <ImageView
+        android:id="@+id/IvEditarImg"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="12dp"
+        android:src="@drawable/pen"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_perfil_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagen_encabezado"
+        app:layout_constraintVertical_bias="0.588" />
 
-    </RelativeLayout>
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imagen_encabezado"
+        android:layout_width="417dp"
+        android:layout_height="131dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/headerbeige"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/RoundedCornersBottom2" />
 
-    <ScrollView
-        android:layout_width="match_parent"
+    <ImageButton
+        android:id="@+id/iv_back_editperfil"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="67dp"
+        android:contentDescription="@string/desc_back_button"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintBottom_toBottomOf="@+id/imagen_encabezado"
+        app:layout_constraintEnd_toStartOf="@+id/Txt_titulo_edit"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Txt_titulo_edit"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp">
+        android:layout_centerInParent="true"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/manrope_extrabold"
+        android:text="@string/Txt_titulo_edit"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imagen_encabezado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.017" />
 
-        <RelativeLayout
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TILNombres"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="16dp"
+        app:boxBackgroundMode="none"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_perfil_edit">
+
+        <EditText
+            android:id="@+id/et_Nombres"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RelativeLayout
-                android:id="@+id/perfilRl"
-                android:layout_centerHorizontal="true"
-                android:layout_width="120dp"
-                android:layout_height="120dp">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/ivPerfil"
-                    android:src="@drawable/ic_img_perfil"
-                    android:scaleType="centerCrop"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"/>
-
-                <ImageView
-                    android:id="@+id/IvEditarImg"
-                    android:src="@drawable/icono_editar"
-                    android:layout_alignParentEnd="true"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"/>
-
-            </RelativeLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/TILNombres"
-                android:layout_below="@+id/perfilRl"
-                android:layout_marginTop="10dp"
-                app:boxCornerRadiusBottomEnd="8dp"
-                app:boxCornerRadiusBottomStart="8dp"
-                app:boxCornerRadiusTopEnd="8dp"
-                app:boxCornerRadiusTopStart="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/et_Nombres"
-                    android:hint="@string/et_Nombres"
-                    android:inputType="textPersonName|textCapWords"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_input_background"
+            android:hint="@string/et_Nombres"
+            android:inputType="textPersonName|textCapWords"
+            android:paddingStart="50dp" />
 
 
-            </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_Actualizar"
-                android:text="@string/btn_Actualizar"
-                android:textAllCaps="true"
-                app:cornerRadius="8dp"
-                android:layout_marginTop="15dp"
-                android:layout_below="@id/TILNombres"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_Actualizar"
+        android:layout_width="230dp"
+        android:layout_height="52dp"
+        android:layout_below="@id/TILNombres"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/manrope_bold"
+        android:text="@string/btn_Actualizar"
+        android:textColor="#232C35"
+        app:backgroundTint="#ECDDD4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TILNombres" />
 
-        </RelativeLayout>
 
-
-    </ScrollView>
-
-</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>
