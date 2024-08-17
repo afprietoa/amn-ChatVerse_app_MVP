@@ -67,7 +67,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView"
-                app:style="@style/CustomTextInputLayout">
+                style="@style/CustomTextInputLayout">
 
                 <EditText
                     android:id="@+id/et_Email"
@@ -100,7 +100,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
                 app:endIconTint="@color/iconeye_password"
                 app:passwordToggleEnabled="true"
-                app:style="@style/CustomTextInputLayout">
+               style="@style/CustomTextInputLayout">
 
                 <EditText
                     android:id="@+id/et_Password"

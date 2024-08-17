@@ -94,6 +94,8 @@
         app:boxCornerRadiusBottomStart="20dp"
         app:boxCornerRadiusTopEnd="20dp"
         app:boxCornerRadiusTopStart="20dp"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/editperfil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_perfil_edit">
@@ -105,7 +107,7 @@
             android:background="@drawable/text_input_background"
             android:hint="@string/et_Nombres"
             android:inputType="textPersonName|textCapWords"
-            android:paddingStart="50dp" />
+          />
 
 
     </com.google.android.material.textfield.TextInputLayout>
