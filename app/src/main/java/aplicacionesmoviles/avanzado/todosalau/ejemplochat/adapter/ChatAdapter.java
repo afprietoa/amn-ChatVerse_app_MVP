@@ -104,4 +104,5 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
         userModelList = newUserList;
         notifyDataSetChanged();
     }
+
 }

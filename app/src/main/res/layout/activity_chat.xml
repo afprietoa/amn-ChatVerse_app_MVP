@@ -1,117 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+    android:background="@drawable/gradient_background"
+
     tools:context=".Chat_Conversations_Fragments">
 
 
 
-    <RelativeLayout
-        android:id="@+id/toolbarRL"
+
+    <!-- Fondo de imagen para el toolbar -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imagen_encabezado"
+        android:layout_width="393dp"
+        android:layout_height="126dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/headerbeige"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:shapeAppearanceOverlay="@style/RoundedCornersBottom2" />
+
+    <!-- Botón de retroceso -->
+    <ImageButton
+        android:id="@+id/IbRegresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:padding="10dp"
+        android:contentDescription="@string/back_button_descriptionchat"
+        android:background="@android:color/transparent"
+        android:src="@drawable/btnatras"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imagen_encabezado"
+        app:layout_constraintBottom_toBottomOf="@id/imagen_encabezado" />
+
+    <!-- Imagen de perfil en el toolbar -->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/toolbarIv"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="7dp"
+        android:src="@drawable/perfil_usuario"
+        app:layout_constraintStart_toEndOf="@id/IbRegresar"
+        app:layout_constraintTop_toTopOf="@id/imagen_encabezado"
+        app:layout_constraintBottom_toBottomOf="@id/imagen_encabezado" />
+
+
+    <TextView
+        android:id="@+id/txt_nombres_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/manrope_semibold"
+        android:text="@string/txt_nombres_usuario"
+        app:layout_constraintBottom_toTopOf="@+id/txt_estado_chat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintStart_toEndOf="@id/toolbarIv"
+        app:layout_constraintTop_toTopOf="@id/imagen_encabezado" />
+
+    <TextView
+        android:id="@+id/txt_estado_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="66dp"
+        android:text="@string/txt_estado_chat"
+        android:textSize="12sp"
+        android:fontFamily="@font/manrope"
+        app:layout_constraintBottom_toBottomOf="@id/imagen_encabezado"
+        app:layout_constraintStart_toStartOf="@id/txt_nombres_usuario"
+        app:layout_constraintTop_toBottomOf="@id/txt_nombres_usuario" />
+
+    <!-- Línea divisoria debajo del toolbar -->
+    <View
+        android:id="@+id/view1"
         android:layout_width="match_parent"
-        android:layout_height="55dp">
+        android:layout_height="1dp"
+        android:background="#ccc"
+        app:layout_constraintBottom_toBottomOf="@id/imagen_encabezado" />
 
-        <ImageButton
-            android:id="@+id/IbRegresar"
-            android:padding="10dp"
-            android:layout_centerVertical="true"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_regresar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/toolbarIv"
-            android:layout_centerVertical="true"
-            android:src="@drawable/perfil_usuario"
-            android:layout_toStartOf="@+id/txt_nombres_usuario"
-            android:layout_marginEnd="7dp"
-            android:layout_width="40dp"
-            android:layout_height="40dp"/>
-
-        <TextView
-            android:id="@+id/txt_nombres_usuario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/txt_nombres_usuario"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/txt_estado_chat"
-            android:text="@string/txt_estado_chat"
-            android:textSize="12sp"
-            android:layout_centerInParent="true"
-            android:layout_below="@id/txt_nombres_usuario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <View
-            android:background="#ccc"
-            android:layout_alignParentBottom="true"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"/>
-    </RelativeLayout>
-
+    <!-- RecyclerView para los chats -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chatsRV"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="9dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:layout_below="@+id/toolbarRL"
-        android:padding="5dp"
-        tools:listitem="@layout/item_chat_right"
-        android:layout_above="@+id/View2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        app:layout_constraintBottom_toTopOf="@id/View2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imagen_encabezado"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/item_chat_right" />
 
-    <RelativeLayout
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/RL_mensaje"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="390dp"
+        android:layout_height="80dp"
+        android:layout_margin="0dp"
+        android:background="#FCF7F4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <EditText
             android:id="@+id/Et_mensaje_chat"
+            android:layout_width="233dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="9dp"
+            android:background="@drawable/rounded_edittext_with_shadow"
+            android:fontFamily="@font/manrope"
             android:hint="@string/Et_mensaje_chat"
-            android:padding="10dp"
-            android:layout_toStartOf="@id/adjuntarFAB"
             android:inputType="textMultiLine|textCapSentences"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:padding="13dp"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/adjuntarFAB"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/adjuntarFAB"
-            android:layout_centerVertical="true"
-            app:fabSize="mini"
-            android:elevation="0dp"
-            android:layout_toStartOf="@+id/enviarFAB"
-            android:layout_marginEnd="7dp"
-            android:src="@drawable/ico_imagen_chat"
+            style="@style/CustomFAB"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
+            android:padding="12dp"
+            android:src="@drawable/upimg"
+            android:contentDescription="@string/adjuntar_fab_descriptionchat"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/enviarFAB"
+            app:layout_constraintStart_toEndOf="@id/Et_mensaje_chat"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@null" />
+
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/enviarFAB"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"
-            app:fabSize="mini"
-            android:elevation="0dp"
-            android:src="@drawable/ico_enviar_chat"
+            style="@style/CustomFAB"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:padding="12dp"
+            android:contentDescription="@string/enviar_fab_descriptionchat"
+            android:src="@drawable/send"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.466"
+            app:tint="@null" />
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
         android:id="@+id/View2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
         android:background="#ccc"
-        android:layout_above="@+id/RL_mensaje"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+
+        app:layout_constraintBottom_toTopOf="@id/RL_mensaje"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
-</RelativeLayout>
+

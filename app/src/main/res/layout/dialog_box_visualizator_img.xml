@@ -1,23 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="400dp"
-    android:layout_height="400dp"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#ccc"
-    android:layout_gravity="center">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-    <com.github.chrisbanes.photoview.PhotoView
-        android:id="@+id/Pv_img"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+    <!-- CardView to contain the PhotoView with rounded corners -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="360dp"
+        android:layout_height="404dp"
+        android:layout_marginTop="190dp"
+        app:cardBackgroundColor="#ffffff"
+        app:cardCornerRadius="33dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <!-- PhotoView inside the CardView -->
+        <com.github.chrisbanes.photoview.PhotoView
+            android:id="@+id/Pv_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- MaterialButton below the PhotoView -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/BtnCerrarVisualizador"
+        android:layout_width="230dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/manrope_bold"
         android:text="@string/BtnCerrarVisualizador"
-        android:textAllCaps="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        app:cornerRadius="8dp"/>
+        android:textColor="#232C35"
+        app:backgroundTint="#ECDDD4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,52 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="120dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:cardCornerRadius="5dp"
+    app:cardCornerRadius="15dp"
     app:cardUseCompatPadding="true"
-    app:contentPadding="10dp">
+    app:cardBackgroundColor="#ffffff"
+    android:layout_marginTop="-10dp"
+    app:strokeWidth="0dp">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="wrap_content"
+        android:layout_height="108dp">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/IvPerfil"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="22dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_img_perfil" />
 
         <TextView
             android:id="@+id/tvNombres"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="19dp"
             android:layout_toEndOf="@+id/IvPerfil"
-            android:textStyle="bold"
-            tools:text="@tools:sample/full_names" />
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/IvPerfil"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="10dp"
-            android:scaleType="centerCrop"
-            tools:src="@tools:sample/avatars" />
-
-        <TextView
-            android:id="@+id/tvFecha"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="0dp"
-            android:text="@string/tvFecha" />
+            android:fontFamily="@font/manrope_semibold"
+            android:text="Nombre del Usuario"
+            android:textColor="#0D141C" />
 
         <TextView
             android:id="@+id/tvUltimoMensaje"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvNombres"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="13dp"
             android:layout_marginTop="6dp"
             android:layout_toEndOf="@+id/IvPerfil"
             android:ellipsize="end"
+            android:textColor="#4F7396"
             tools:text="@tools:sample/lorem[10]" />
+
+        <TextView
+            android:id="@+id/tvFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="18dp"
+            android:layout_marginTop="9dp"
+            android:text="@string/tvFecha"
+            android:textSize="13sp"/>
+
 
     </RelativeLayout>
 
