@@ -4,8 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FCF7F4"
-    tools:context=".Fragmentos.FragmentChats">
+
+
+    <!-- android:background="#FCF7F4"
+    tools:context=".Fragmentos.FragmentChats">-->
+
+    android:orientation="vertical"
+    android:padding="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Chat">
+
 
     <!-- Imagen de encabezado -->
 
@@ -66,7 +74,9 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
+
     <!-- RecyclerView para mostrar los chats -->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chatsRv"
         android:layout_width="0dp"
@@ -78,5 +88,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imagen_encabezado"
         tools:listitem="@layout/items_chats" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

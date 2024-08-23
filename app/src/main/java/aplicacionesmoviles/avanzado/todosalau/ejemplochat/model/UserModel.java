@@ -3,10 +3,12 @@ package aplicacionesmoviles.avanzado.todosalau.ejemplochat.model;
 import java.util.List;
 
 public class UserModel {
-    private String userId;           // ID único del usuario
-    private String email;            // Correo electrónico del usuario
-    private String name;             // Nombre del usuario
+    private String userId;
+    private String email;
+    private String name;
     private List<String> messageIds; // Lista de IDs de los mensajes enviados por el usuario
+    private String lastMessage;
+    private String lastMessageTime;
 
     // Constructor vacío necesario para Firebase
     public UserModel() {
@@ -17,6 +19,8 @@ public class UserModel {
         this.userId = userId;
         this.email = email;
         this.name = name;
+        this.lastMessage = lastMessage;
+        this.lastMessageTime = lastMessageTime;
     }
 
     // Getter y setter para la lista de IDs de los mensajes enviados por el usuario
@@ -51,5 +55,21 @@ public class UserModel {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getLastMessage() {
+        return lastMessage;
+    }
+
+    public void setLastMessage(String lastMessage) {
+        this.lastMessage = lastMessage;
+    }
+
+    public String getLastMessageTime() {
+        return lastMessageTime;
+    }
+
+    public void setLastMessageTime(String lastMessageTime) {
+        this.lastMessageTime = lastMessageTime;
     }
 }
