@@ -12,38 +12,41 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/IvPerfil"
-            tools:src="@tools:sample/avatars"
-            android:layout_marginEnd="10dp"
-            android:scaleType="centerCrop"
-            android:layout_width="40dp"
-            android:layout_height="40dp"/>
-
         <TextView
             android:id="@+id/tvNombres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:layout_toEndOf="@+id/IvPerfil"
             android:textStyle="bold"
-            tools:text="@tools:sample/full_names"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            tools:text="@tools:sample/full_names" />
 
-        <TextView
-            android:id="@+id/tvUltimoMensaje"
-            android:layout_marginTop="5dp"
-            android:ellipsize="end"
-            android:layout_toEndOf="@+id/IvPerfil"
-            android:layout_below="@id/tvNombres"
-            tools:text="@tools:sample/lorem[10]"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/IvPerfil"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerCrop"
+            tools:src="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/tvFecha"
-            android:text="@string/tvFecha"
-            android:layout_alignParentEnd="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="0dp"
+            android:text="@string/tvFecha" />
+
+        <TextView
+            android:id="@+id/tvUltimoMensaje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvNombres"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="6dp"
+            android:layout_toEndOf="@+id/IvPerfil"
+            android:ellipsize="end"
+            tools:text="@tools:sample/lorem[10]" />
 
     </RelativeLayout>
 

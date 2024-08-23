@@ -30,11 +30,9 @@ public interface ChatConversationContract {
         /**
          * Indica que un mensaje ha sido enviado.
          */
-
-
         void messageSent();
 
-        Context getContext();
+
 
     }
 }

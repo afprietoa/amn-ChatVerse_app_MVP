@@ -9,9 +9,9 @@ android {
 
     defaultConfig {
         applicationId = "aplicacionesmoviles.avanzado.todosalau.ejemplochat"
-        minSdk = 30
+        minSdk = 33
         //noinspection EditedTargetSdkVersion
-        targetSdk = 30
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -56,12 +56,15 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
-    implementation(kotlin("script-runtime"))
 
     // Room components
     implementation("androidx.room:room-runtime:2.6.1")
     annotationProcessor("androidx.room:room-compiler:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
+
+    // airbnb
+
+    implementation ("com.airbnb.android:lottie:6.4.1")
 
 
 }

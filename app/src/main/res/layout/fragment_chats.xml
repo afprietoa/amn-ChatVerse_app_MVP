@@ -25,6 +25,8 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chatsRv"
         android:layout_marginTop="10dp"
@@ -32,6 +34,13 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -20,7 +20,8 @@
             android:padding="10dp"
             android:layout_centerVertical="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            />
 
         <TextView
             android:id="@+id/Txt_titulo_edit"
@@ -61,12 +62,12 @@
                     android:layout_width="120dp"
                     android:layout_height="120dp"/>
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/IvEditarImg"
-                    android:src="@drawable/icono_editar"
-                    android:layout_alignParentEnd="true"
                     android:layout_width="50dp"
-                    android:layout_height="50dp"/>
+                    android:layout_height="50dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/pen_2" />
 
             </RelativeLayout>
 

@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,7 +27,7 @@ import aplicacionesmoviles.avanzado.todosalau.ejemplochat.model.MessageModel;
 import aplicacionesmoviles.avanzado.todosalau.ejemplochat.view.ChatConversationContract;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class Chat_Conversations_Fragments extends Fragment implements ChatConversationContract.View {
+public class Chat_Conversations_Fragments extends AppCompatActivity implements ChatConversationContract.View {
 
     private RecyclerView chatsRV;
     private EditText etMensajeChat;
@@ -45,60 +46,63 @@ public class Chat_Conversations_Fragments extends Fragment implements ChatConver
 
 
     private ChatConversationPresenter presenter;
+    private Chat.ChatConversationCallback chatConversationCallback;
+
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savadInstanceState){
-        View view = inflater.inflate(R.layout.activity_chat, container, false);
-
-        chatsRV = view.findViewById(R.id.chatsRV);
-        etMensajeChat = view.findViewById(R.id.Et_mensaje_chat);
-        adjuntarFoto = view.findViewById(R.id.adjuntarFAB);
-        EnviarMensaje = view.findViewById(R.id.enviarFAB);
-        txtNombresUsuario = view.findViewById(R.id.txt_nombres_usuario);
-        txtEstadoChat = view.findViewById(R.id.txt_estado_chat);
-        ibRegresar = view.findViewById(R.id.IbRegresar);
-        toolbarIv = view.findViewById(R.id.toolbarIv);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_chat);
+// Inicializar las vistas
+        chatsRV = findViewById(R.id.chatsRV);
+        etMensajeChat = findViewById(R.id.Et_mensaje_chat);
+        adjuntarFoto = findViewById(R.id.adjuntarFAB);
+        EnviarMensaje = findViewById(R.id.enviarFAB);
+        txtNombresUsuario = findViewById(R.id.txt_nombres_usuario);
+        txtEstadoChat = findViewById(R.id.txt_estado_chat);
+        ibRegresar = findViewById(R.id.IbRegresar);
+        toolbarIv = findViewById(R.id.toolbarIv);
 
         currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        receiverId = getArguments().getString("RECEIVER_ID");
-        receiverName = getArguments().getString("RECEIVER_NAME");
 
+        // Configurar el nombre del receptor en la interfaz de usuario
         txtNombresUsuario.setText(receiverName);
 
+        // Configurar la lista de mensajes y el adaptador
         messageModelList = new ArrayList<>();
         chatAdapter = new ChatConversationAdapter(messageModelList, currentUserId);
         chatsRV.setAdapter(chatAdapter);
 
+        // Inicializar el presentador
+        presenter = new ChatConversationPresenterImpl(this);
 
-       presenter = new ChatConversationPresenterImpl();// necesita el this
-
-        ibRegresar.setOnClickListener(v -> getActivity().onBackPressed());
-
+        // Configurar los listeners de los botones
+        ibRegresar.setOnClickListener(v -> onBackPressed());
         EnviarMensaje.setOnClickListener(v -> sendMessage());
-
         adjuntarFoto.setOnClickListener(v -> attachImage());
 
+        // Cargar los mensajes
         presenter.loadMessages(currentUserId, receiverId);
-
-        return view;
-
     }
 
-
+    public void setChatConversationCallback(Chat.ChatConversationCallback callback) {
+        this.chatConversationCallback = callback;
+    }
 
     private void sendMessage() {
-
         String messageText = etMensajeChat.getText().toString().trim();
         if (!messageText.isEmpty()) {
             presenter.sendMessage(currentUserId, receiverId, messageText);
             etMensajeChat.setText("");
+            if (chatConversationCallback != null) {
+                chatConversationCallback.onChatMessageSent();
+            }
         }
     }
+
     private void attachImage() {
-
+        // Implementar la funcionalidad de adjuntar imagen
     }
-
 
     @Override
     public void displayMessages(List<MessageModel> messages) {
@@ -106,23 +110,19 @@ public class Chat_Conversations_Fragments extends Fragment implements ChatConver
         messageModelList.addAll(messages);
         chatAdapter.notifyDataSetChanged();
         chatsRV.scrollToPosition(messageModelList.size() - 1);
-
-
     }
 
     @Override
     public void showError(String message) {
-
-        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void messageSent() {
         chatsRV.scrollToPosition(messageModelList.size() - 1);
-
     }
-
-
-
 }
+
+
+
+

@@ -2,6 +2,8 @@ package aplicacionesmoviles.avanzado.todosalau.ejemplochat;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -46,15 +48,18 @@ public class Chat extends AppCompatActivity implements UserListContract, ChatCon
     private List<UserModel> userList;
 
     // Variables de Firebase
+
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
 
     // Variables de presentador
+
     private ChatPresenter chatPresenter;
     private UserListPresenter presenter;
 
     private List<UserModel> usersList = new ArrayList<>();
 
+    private ChatConversationCallback chatConversationCallback;
 
 
     @Override
@@ -67,10 +72,10 @@ public class Chat extends AppCompatActivity implements UserListContract, ChatCon
         currentUser = mAuth.getCurrentUser();
 
         //inicializacion de componentes
-        chatsRv= findViewById(R.id.chatsRv);
+        chatsRv = findViewById(R.id.chatsRv);
         etBuscar = findViewById(R.id.etBuscar);
 
-        chatPresenter= new ChatPresenterImpl(this);
+        chatPresenter = new ChatPresenterImpl(this);
         presenter = new UserListPresenterImpl(this);
 
         userList = new ArrayList<>();
@@ -87,7 +92,7 @@ public class Chat extends AppCompatActivity implements UserListContract, ChatCon
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    searchUsers(s.toString());
+                searchUsers(s.toString());
             }
 
             @Override
@@ -99,14 +104,21 @@ public class Chat extends AppCompatActivity implements UserListContract, ChatCon
         presenter.loadUsers();
 
 
+        chatConversationCallback = new ChatConversationCallback() {
+            @Override
+            public void onChatMessageSent() {
+
+            }
+        };
+
     }
 
     private void searchUsers(String query) {
         String nametoSearch = query.toLowerCase().trim();
         List<UserModel> foundUsers = new ArrayList<>();
 
-        for (UserModel user : usersList){
-            if (user.getName().toLowerCase().contains(nametoSearch)){
+        for (UserModel user : usersList) {
+            if (user.getName().toLowerCase().contains(nametoSearch)) {
                 foundUsers.add(user);
             }
         }
@@ -139,12 +151,23 @@ public class Chat extends AppCompatActivity implements UserListContract, ChatCon
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
-    public void openConversation(UserModel user){
+
+    @Override
+    public void onchatItemClicked(UserModel user){
+        openConversation(user);
+    }
+
+
+
+    public void openConversation(UserModel user) {
         Intent intent = new Intent(this, Chat_Conversations_Fragments.class);
         intent.putExtra("RECEIVER_ID", user.getUserId());
         intent.putExtra("RECEIVER_NAME", user.getName());
         startActivity(intent);
-        finish();
 
+    }
+
+    public interface ChatConversationCallback{
+        void onChatMessageSent();
     }
 }
