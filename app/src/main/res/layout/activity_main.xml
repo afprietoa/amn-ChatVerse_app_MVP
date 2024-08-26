@@ -7,48 +7,27 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Toolbar -->
 
 
-    <!-- Contenedor de Fragmentos -->
     <FrameLayout
         android:id="@+id/fragmentosFL"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:layout_above="@id/view"
-        android:background="#FFFFFF" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
-    <!-- Línea divisoria -->
+
     <View
         android:id="@+id/view"
         android:background="#ccc"
-        android:layout_above="@id/bottomNV"
+        android:layout_above="@+id/bottomNV"
         android:layout_width="match_parent"
-        android:layout_height="1dp" />
+        android:layout_height="1dp"/>
 
-    <!-- BottomNavigationView -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNV"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menu_bottom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/rounded_bottom_nav"
-        app:itemTextColor="#637587"
-        app:labelVisibilityMode="auto"
-        app:menu="@menu/barnav_fab_chat" />
-
-    <!-- FloatingActionButton centrado -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
-        android:contentDescription="Floating Action Button"
-        android:src="@drawable/nav_newuser"
-        app:backgroundTint="#005ADB"
-        app:tint="@null"
-        style="@style/CustomFAB2"/>
+        android:layout_height="wrap_content"/>
 
 </RelativeLayout>

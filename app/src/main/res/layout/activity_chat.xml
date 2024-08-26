@@ -5,10 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:background="@drawable/gradient_background"
-
-    tools:context=".Chat_Conversations_Fragments">
+    tools:context=".Chat.ChatActivity">
 
 
 
@@ -101,7 +99,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imagen_encabezado"
         app:layout_constraintVertical_bias="0.0"
-        tools:listitem="@layout/item_chat_right" />
+        tools:listitem="@layout/item_chat_derecho" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -180,7 +178,5 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 

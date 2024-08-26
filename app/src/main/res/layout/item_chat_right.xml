@@ -25,7 +25,7 @@
 
             <!-- TextView for the chat message -->
             <TextView
-                android:id="@+id/textViewChatMessage"
+                android:id="@+id/Tv_mensaje"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/manrope_medium"
@@ -39,7 +39,7 @@
 
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/shapeableImageViewChatImage"
+                android:id="@+id/Iv_mensaje"
                 android:layout_width="201dp"
                 android:layout_height="163dp"
                 android:layout_marginTop="4dp"
@@ -47,11 +47,11 @@
                 android:src="@drawable/imagen_enviada"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewChatMessage" />
+                app:layout_constraintTop_toBottomOf="@id/Tv_mensaje" />
 
 
             <TextView
-                android:id="@+id/textViewAdditionalInfo"
+                android:id="@+id/Tv_tiempo_mensaje"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="13dp"
@@ -63,7 +63,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/shapeableImageViewChatImage"
+                app:layout_constraintTop_toBottomOf="@id/Iv_mensaje"
                 app:layout_constraintVertical_bias="0.529" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

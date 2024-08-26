@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context=".OpcionesLoginActivity">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageView"
+        android:layout_width="412dp"
+        android:layout_height="382dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/imagen_bienvenida"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/RoundedCornersBottom" />
+
+
+    <TextView
+        android:id="@+id/textView_bienvenidos"
+        android:layout_width="338dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="52dp"
+        android:fontFamily="@font/mako"
+        android:text="¡Bienvenidos a Chatverse!"
+        android:textAlignment="center"
+        android:textColor="#0D141C"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView_cont_bienvenida"
+        android:layout_width="338dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/manrope_bold"
+        android:text="Únete y empieza a conectar; comparte,\ndescubre y disfruta cada conversación."
+        android:textAlignment="center"
+        android:textColor="#5F5D63"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_bienvenidos" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/opcionEmail"
+        android:layout_width="230dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="56dp"
+        android:text="@string/opcionEmail"
+        android:fontFamily="@font/manrope_bold"
+        app:backgroundTint="#005ADB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_cont_bienvenida" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/opcionGoogle"
+        android:layout_width="230dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/opcionGoogle"
+        android:fontFamily="@font/manrope_bold"
+        android:textColor="#0D141C"
+        app:backgroundTint="#ECDDD4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/opcionEmail" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

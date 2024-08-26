@@ -100,7 +100,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
                 app:endIconTint="@color/iconeye_password"
                 app:passwordToggleEnabled="true"
-               style="@style/CustomTextInputLayout">
+                style="@style/CustomTextInputLayout">
 
                 <EditText
                     android:id="@+id/et_Password"

@@ -4,15 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FCF7F4"
+    tools:context=".Fragmentos.FragmentChats">
 
 
-    <!-- android:background="#FCF7F4"
-    tools:context=".Fragmentos.FragmentChats">-->
-
-    android:orientation="vertical"
-    android:padding="10dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Chat">
 
 
     <!-- Imagen de encabezado -->
@@ -60,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textview_encabezado">
 
         <EditText
-            android:id="@+id/et_buscar_usuario_chats"
+            android:id="@+id/etBuscar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/text_input_background"

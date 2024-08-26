@@ -32,6 +32,10 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    buildFeatures{
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -45,18 +49,26 @@ dependencies {
 
     // Firebase Core and Analytics
     implementation("com.google.firebase:firebase-core:21.1.1")
-    implementation("com.google.firebase:firebase-analytics")
-
+    implementation ("com.google.firebase:firebase-messaging:23.3.1")
     // Firebase Authentication and Firestore
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
-    implementation("com.google.firebase:firebase-database:21.0.0")
+    implementation("com.google.firebase:firebase-database")
+    implementation("com.google.firebase:firebase-storage")
+    implementation ("com.google.android.gms:play-services-auth:21.2.0")
+    implementation ("com.android.volley:volley:1.2.1")
 
     implementation ("de.hdodenhof:circleimageview:3.1.0")
     // Add PhotoView dependency
     implementation ("com.github.chrisbanes:PhotoView:2.3.0")
 
+    implementation ("com.github.chrisbanes:PhotoView:2.3.0")
+
     testImplementation("junit:junit:4.13.2")
+
+    // Glide
+    implementation("com.github.bumptech.glide:glide:4.12.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
 
 
     // barnav fab//
